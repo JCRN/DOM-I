@@ -41,3 +41,19 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Fix the title
+const title = document.querySelector('title')
+title.textContent = "Great Idea!"
+
+// Add innerHTML to nav links
+const navLinks = document.querySelectorAll('nav a')
+navLinks.forEach((link, idx) => {
+  let str = `nav-item-${idx+1}`
+  link.textContent = siteContent.nav[str]
+})
+
+
+
+
+
