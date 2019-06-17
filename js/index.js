@@ -10,7 +10,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM \nIs \nAwesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -46,14 +46,50 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 const title = document.querySelector('title')
 title.textContent = "Great Idea!"
 
-// Add innerHTML to nav links
+// Add textContent to nav links
 const navLinks = document.querySelectorAll('nav a')
 navLinks.forEach((link, idx) => {
   let str = `nav-item-${idx+1}`
   link.textContent = siteContent.nav[str]
 })
 
+// insert <br> tags and text into H1
+const h1 = document.querySelector('.cta-text h1')
+h1.style.whiteSpace = 'pre'
+h1.textContent = siteContent.cta['h1']
+
+// insert button text
+document.querySelector('.cta-text > button').textContent = siteContent.cta['button']
+
+// insert code snippet image
+document.querySelector('#cta-img').src = siteContent.cta['img-src']
+
+// *** Main content ***
+
+// insert top-content
+
+// features
+document.querySelector('.top-content > .text-content > h4').textContent = siteContent['main-content']['features-h4']
+document.querySelector('.top-content > .text-content > p').textContent = siteContent['main-content']['features-content']
+
+// about
+document.querySelector('.top-content > .text-content ~ .text-content > h4').textContent = siteContent['main-content']['about-h4']
+document.querySelector('.top-content > .text-content ~ .text-content > p').textContent = siteContent['main-content']['about-content']
 
 
+// middle image
+document.querySelector('.middle-img').src = siteContent['main-content']['middle-img-src']
 
+// insert bottom content
 
+// services
+document.querySelector('.bottom-content > .text-content > h4').textContent = siteContent['main-content']['services-h4']
+document.querySelector('.bottom-content > .text-content > p').textContent = siteContent['main-content']['services-content']
+
+// product
+document.querySelector('.bottom-content > .text-content ~ .text-content > h4').textContent = siteContent['main-content']['product-h4']
+document.querySelector('.bottom-content > .text-content ~ .text-content > p').textContent = siteContent['main-content']['product-content']
+
+// vision
+document.querySelector('.bottom-content > .text-content ~ .text-content ~ .text-content > h4').textContent = siteContent['main-content']['vision-h4']
+document.querySelector('.bottom-content > .text-content ~ .text-content ~ .text-content > p').textContent = siteContent['main-content']['vision-content']
