@@ -10,7 +10,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM \nIs \nAwesome",
+    "h1": "DOM Is Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -44,7 +44,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // *** NAV MENU ***
 
-  // links
+  // links node list
   const navLinks = document.querySelectorAll('nav a')
 
   // links text
@@ -58,15 +58,13 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
     link.style.color = 'green'
   })
 
-  // create two new items
-  const navFirst = document.createElement('a')
+  // create 2 new items
+  const navFirst = document.createElement('p')
     navFirst.style.color = 'blue'
-    navFirst.href = '#'
     navFirst.textContent = 'Greatness' 
      
-  const navLast = document.createElement('a')
+  const navLast = document.createElement('p')
     navLast.style.color = 'blue'
-    navLast.href = "#"
     navLast.textContent = 'Awaits'
 
   // append new items to nav
@@ -74,20 +72,13 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   nav.prepend(navFirst)
   nav.appendChild(navLast)
 
-
-
-
-
-
-
-
   
 // *** CALL TO ACTION ***
 
   // h1
   const h1 = document.querySelector('.cta-text h1')
   h1.style.whiteSpace = 'pre'
-  h1.textContent = siteContent.cta['h1']
+  h1.textContent = siteContent.cta['h1'].split(' ').join('\n')
 
   // button text
   document.querySelector('.cta-text > button').textContent = siteContent.cta['button']
