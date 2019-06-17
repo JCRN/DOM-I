@@ -54,9 +54,31 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
   })
 
   // links color
-   navLinks.forEach(link => {
+  navLinks.forEach(link => {
     link.style.color = 'green'
   })
+
+  // create two new items
+  const navFirst = document.createElement('a')
+    navFirst.style.color = 'blue'
+    navFirst.href = '#'
+    navFirst.textContent = 'Greatness' 
+     
+  const navLast = document.createElement('a')
+    navLast.style.color = 'blue'
+    navLast.href = "#"
+    navLast.textContent = 'Awaits'
+
+  // append new items to nav
+  const nav = document.querySelector('nav')
+  nav.prepend(navFirst)
+  nav.appendChild(navLast)
+
+
+
+
+
+
 
 
   
